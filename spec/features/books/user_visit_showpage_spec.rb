@@ -30,4 +30,16 @@ describe 'user visits book page' do
 
     expect(page).to have_content(4.5)
   end
+
+  scenario 'user sees highest review' do
+    book = Book.create!(title: 'Fellowship of the Ring')
+    user1 = User.create!(name: 'Odin')
+    user2 = User.create!(name: 'Thor')
+    review1 = book.reviews.create!(body: 'Great', user_id: user1.id, rating: 5)
+    review2 = book.reviews.create!(body: 'Ok', user_id: user2.id, rating: 4)
+
+    visit book_path(book)
+
+    expect(page).to have_content("Highest Review: #{review1.rating}")
+  end
 end
