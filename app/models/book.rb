@@ -8,4 +8,8 @@ class Book < ApplicationRecord
     end
     sum.to_f / reviews.count
   end
+
+  def highest_review
+    Review.maximum(:rating)
+  end
 end

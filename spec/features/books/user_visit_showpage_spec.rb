@@ -40,6 +40,6 @@ describe 'user visits book page' do
 
     visit book_path(book)
 
-    expect(page).to have_content("Highest Review: #{review2.rating}")
+    expect(page).to have_content("Highest Review: #{review1.rating}")
   end
 end
