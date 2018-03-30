@@ -12,10 +12,10 @@ describe 'user visits book page to see title and reviews' do
 
     expect(page).to have_content(book.title)
     expect(page).to have_content(review1.body)
-    expect(page).to have_content(review1.user_id)
+    expect(page).to have_content(user1.name)
     expect(page).to have_content(review1.rating)
     expect(page).to have_content(review2.body)
-    expect(page).to have_content(review2.user_id)
+    expect(page).to have_content(user2.name)
     expect(page).to have_content(review2.rating)
   end
 end

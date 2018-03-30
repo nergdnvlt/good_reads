@@ -2,6 +2,7 @@
 
 <% @book.reviews.each do |review| %>
   <p><%= review.body%></p>
-  <p><%= review.user.name %></p>
+  <p><%= User.find(review.user_id).name %></p>
+  <!-- I aboslutely know that isn't the best way to get the name, but feel behind and am just pushing forward. -->
   <p><%= review.rating %></p>
 <% end %>
